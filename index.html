@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Calculator</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 30px 0;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: #333;
+            text-shadow: 2px 2px #ccc;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="number"] {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #797272;
+        }
+
+        #resultMatrix {
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #bbb1b1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            min-height: 230px;
+            min-width: 230px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1>Matrix Calculator</h1>
+        <table id="matrixA">
+            <tr>
+                <td><input type="number" id="a11"></td>
+                <td><input type="number" id="a12"></td>
+                <td><input type="number" id="a13"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="a21"></td>
+                <td><input type="number" id="a22"></td>
+                <td><input type="number" id="a23"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="a31"></td>
+                <td><input type="number" id="a32"></td>
+                <td><input type="number" id="a33"></td>
+            </tr>
+        </table>
+        <table id="matrixB">
+            <tr>
+                <td><input type="number" id="b11"></td>
+                <td><input type="number" id="b12"></td>
+                <td><input type="number" id="b13"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="b21"></td>
+                <td><input type="number" id="b22"></td>
+                <td><input type="number" id="b23"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="b31"></td>
+                <td><input type="number" id="b32"></td>
+                <td><input type="number" id="b33"></td>
+            </tr>
+        </table>
+        <button onclick="addMatrices()">Add Matrices</button>
+        <div>
+            <table id="resultMatrix">
+                <tr>
+                    <td id="c11"></td>
+                    <td id="c12"></td>
+                    <td id="c13"></td>
+                </tr>
+                <tr>
+                    <td id="c21"></td>
+                    <td id="c22"></td>
+                    <td id="c23"></td>
+                </tr>
+                <tr>
+                    <td id="c31"></td>
+                    <td id="c32"></td>
+                    <td id="c33"></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <script>
+            function addMatrices() {
+                // Get the input values
+                var a11 = parseInt(document.getElementById("a11").value);
+                var a12 = parseInt(document.getElementById("a12").value);
+                var a13 = parseInt(document.getElementById("a13").value);
+                var a21 = parseInt(document.getElementById("a21").value);
+                var a22 = parseInt(document.getElementById("a22").value);
+                var a23 = parseInt(document.getElementById("a23").value);
+                var a31 = parseInt(document.getElementById("a31").value);
+                var a32 = parseInt(document.getElementById("a32").value);
+                var a33 = parseInt(document.getElementById("a33").value);
+
+                var b11 = parseInt(document.getElementById("b11").value);
+                var b12 = parseInt(document.getElementById("b12").value);
+                var b13 = parseInt(document.getElementById("b13").value);
+                var b21 = parseInt(document.getElementById("b21").value);
+                var b22 = parseInt(document.getElementById("b22").value);
+                var b23 = parseInt(document.getElementById("b23").value);
+                var b31 = parseInt(document.getElementById("b31").value);
+                var b32 = parseInt(document.getElementById("b32").value);
+                var b33 = parseInt(document.getElementById("b33").value);
+
+                // Calculate the result matrix
+                var c11 = a11 + b11;
+                var c12 = a12 + b12;
+                var c13 = a13 + b13;
+                var c21 = a21 + b21;
+                var c22 = a22 + b22;
+                var c23 = a23 + b23;
+                var c31 = a31 + b31;
+                var c32 = a32 + b32;
+                var c33 = a33 + b33;
+
+                // Set the result matrix values
+                document.getElementById("c11").innerHTML = c11;
+                document.getElementById("c12").innerHTML = c12;
+                document.getElementById("c13").innerHTML = c13;
+                document.getElementById("c21").innerHTML = c21;
+                document.getElementById("c22").innerHTML = c22;
+                document.getElementById("c23").innerHTML = c23;
+                document.getElementById("c31").innerHTML = c31;
+                document.getElementById("c32").innerHTML = c32;
+                document.getElementById("c33").innerHTML = c33;
+            }
+        </script>
+
+</body>
+
+</html>
